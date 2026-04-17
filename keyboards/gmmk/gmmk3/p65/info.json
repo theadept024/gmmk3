@@ -1,0 +1,25 @@
+{
+  "keyboard_name": "GMMK 3 P65",
+  "manufacturer": "Glorious",
+  "maintainer": "you",
+  "url": "https://www.gloriousgaming.com",
+  "processor": "STM32F072",
+  "bootloader": "stm32-dfu",
+  "usb": {
+    "vid": "0x320F",
+    "pid": "0x5055",
+    "device_version": "0.0.1"
+  },
+  "diode_direction": "COL2ROW",
+  "matrix_size": {
+    "rows": 5,
+    "cols": 14
+  },
+  "features": {
+    "bootmagic": true,
+    "command": false,
+    "console": false,
+    "extrakey": true,
+    "nkro": true
+  }
+}
