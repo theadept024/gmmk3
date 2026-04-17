@@ -308,5 +308,18 @@ This scaffold was updated to avoid common modern QMK metadata issues:
 - Removed `DEFAULT_FOLDER` from `ansi/rules.mk` (deprecated/invalid).
 - Moved USB identity metadata to `info.json` (`usb.vid`, `usb.pid`, `usb.device_version`).
 - Kept matrix/diode metadata in `info.json` to avoid duplicate overrides from `config.h`.
-- Changed lighting metadata to object sections (`rgb_matrix`, `rgblight`) to avoid `KeyError: 'rgb_matrix'` in newer QMK parsers.
+- Removed incomplete lighting metadata from `info.json` so schema validation does not reject the file.
+
+
+
+### Why lighting is disabled in this scaffold
+
+Recent QMK versions require valid LED driver metadata for RGB Matrix builds.
+Without confirmed board-specific LED configuration, enabling RGB Matrix can fail with errors like:
+
+`RGB_MATRIX_DRIVER= is not a valid matrix type`
+
+So the scaffold keeps `RGBLIGHT_ENABLE = no` and `RGB_MATRIX_ENABLE = no` in the Vial keymap rules by default until hardware LED details are confirmed.
+
+After base compile works, re-enable lighting and add your board's real LED driver config.
 

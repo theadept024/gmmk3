@@ -21,11 +21,5 @@
     "console": false,
     "extrakey": true,
     "nkro": true
-  },
-  "rgb_matrix": {
-    "enabled": true
-  },
-  "rgblight": {
-    "enabled": true
   }
 }
