@@ -2,9 +2,9 @@
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 
-# 65% ANSI GMMK 3 feature coverage
-ENCODER_ENABLE = yes
-ENCODER_MAP_ENABLE = yes
+# Encoder is disabled in scaffold builds until real encoder pins are known.
+ENCODER_ENABLE = no
+ENCODER_MAP_ENABLE = no
 
 # Lighting is disabled in scaffold builds until board-specific LED driver data is known.
 RGBLIGHT_ENABLE = no

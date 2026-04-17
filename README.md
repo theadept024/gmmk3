@@ -255,7 +255,7 @@ Because GMMK 3 revisions can differ, verify:
 
 ## Current feature coverage
 
-- **Knob support** via `ENCODER_MAP_ENABLE` with per-layer actions.
+- **Knob mapping logic** is present in keymap code but disabled in scaffold builds until encoder pins are defined.
 - **Lighting layer** with RGB Matrix + RGB Light controls.
 - **Accent light controls** via custom keys (`AC_TOG`, `AC_HUI`, `AC_HUD`, `AC_VAI`, `AC_VAD`).
 
@@ -322,4 +322,13 @@ Without confirmed board-specific LED configuration, enabling RGB Matrix can fail
 So the scaffold keeps `RGBLIGHT_ENABLE = no` and `RGB_MATRIX_ENABLE = no` in the Vial keymap rules by default until hardware LED details are confirmed.
 
 After base compile works, re-enable lighting and add your board's real LED driver config.
+
+
+
+### Why encoder is disabled in this scaffold
+
+QMK requires real `ENCODER_A_PINS` / `ENCODER_B_PINS` definitions when encoder features are enabled.
+Without board-specific pin values, compile fails with errors like `ENCODER_A_PINS undeclared`.
+
+So the scaffold keeps `ENCODER_ENABLE = no` and `ENCODER_MAP_ENABLE = no` by default until your real encoder pins are known.
 
