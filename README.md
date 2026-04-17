@@ -18,10 +18,10 @@ Since you are on Windows, use this flow:
    ```
 4. Your QMK folder is typically under your Windows user profile (for example `C:\Users\<you>\qmk_firmware`).
 5. Copy this repo's `vial` folder into:
-   `C:\Users\<you>\qmk_firmware\keyboards\glorious\gmmk3\keymaps\vial`
+   `C:\Users\<you>\qmk_firmware\keyboards\gmmk\gmmk3\p65\ansi\keymaps\vial`
 6. Compile from QMK MSYS:
    ```bash
-   qmk compile -kb glorious/gmmk3 -km vial
+   qmk compile -kb gmmk/gmmk3/p65/ansi -km vial
    ```
 7. Flash with **QMK Toolbox** on Windows.
 
@@ -88,12 +88,12 @@ That prints the absolute folder path to this repository.
 To print the exact `vial` folder path from the repo root, run:
 
 ```bash
-realpath keyboards/glorious/gmmk3/keymaps/vial
+realpath keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial
 ```
 
 If you are using a GUI file browser, open that printed path and navigate to:
 
-`keyboards/glorious/gmmk3/keymaps/vial`
+`keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial`
 
 
 ### Do I already have a repository terminal?
@@ -125,10 +125,10 @@ Only after that will the source path exist on your machine for Step 3 copying.
 
 ## What is in this repo
 
-- `keyboards/glorious/gmmk3/keymaps/vial/keymap.c` → your key layout, layers, knob behavior, accent-light controls
-- `keyboards/glorious/gmmk3/keymaps/vial/config.h` → Vial UID/unlock combo + RGB defaults
-- `keyboards/glorious/gmmk3/keymaps/vial/rules.mk` → feature flags (Vial/VIA, encoder, RGB)
-- `keyboards/glorious/gmmk3/keymaps/vial/vial.json` → Vial metadata/layout description
+- `keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial/keymap.c` → your key layout, layers, knob behavior, accent-light controls
+- `keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial/config.h` → Vial UID/unlock combo + RGB defaults
+- `keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial/rules.mk` → feature flags (Vial/VIA, encoder, RGB)
+- `keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial/vial.json` → Vial metadata/layout description
 
 So yes: it includes the **keymap source** and the **Vial JSON**.
 
@@ -164,11 +164,11 @@ This creates/clones a local `qmk_firmware` folder.
 
 Copy this repo's `vial` folder into:
 
-`qmk_firmware/keyboards/glorious/gmmk3/keymaps/vial`
+`qmk_firmware/keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial`
 
 You should end with:
 
-`qmk_firmware/keyboards/glorious/gmmk3/keymaps/vial/keymap.c`
+`qmk_firmware/keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial/keymap.c`
 
 (and the other three files beside it).
 
@@ -177,15 +177,15 @@ You should end with:
 
 In this repository, the folder you need to copy is exactly:
 
-`/workspace/gmmk3/keyboards/glorious/gmmk3/keymaps/vial`
+`/workspace/gmmk3/keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial`
 
 If you are browsing files manually, it is:
 
-`keyboards -> glorious -> gmmk3 -> keymaps -> vial`
+`keyboards -> gmmk -> gmmk3 -> p65 -> ansi -> keymaps -> vial`
 
 The destination in your local QMK checkout should be:
 
-`<your qmk_firmware path>/keyboards/glorious/gmmk3/keymaps/vial`
+`<your qmk_firmware path>/keyboards/gmmk/gmmk3/p65/ansi/keymaps/vial`
 
 
 ### Step 3 made explicit (what to copy, from where, to where)
@@ -194,15 +194,15 @@ You are copying **one folder named `vial`**.
 
 - **Source folder (where you copy FROM):**
   The `vial` folder inside this project:
-  `keyboards\glorious\gmmk3\keymaps\vial`
+  `keyboards\gmmk\gmmk3\p65\ansi\keymaps\vial`
 
 - **Destination folder (where you copy TO):**
   Your local QMK folder:
-  `C:\Users\<you>\qmk_firmware\keyboards\glorious\gmmk3\keymaps\`
+  `C:\Users\<you>\qmk_firmware\keyboards\gmmk\gmmk3\p65\ansi\keymaps\`
 
 After copy, this must exist on your PC:
 
-`C:\Users\<you>\qmk_firmware\keyboards\glorious\gmmk3\keymaps\vial\keymap.c`
+`C:\Users\<you>\qmk_firmware\keyboards\gmmk\gmmk3\p65\ansi\keymaps\vial\keymap.c`
 
 In File Explorer, open both folders side-by-side and drag the `vial` folder into the destination `keymaps` folder.
 
@@ -218,18 +218,18 @@ Use one of these options first:
 
 After that, your source folder will be inside that downloaded/cloned location:
 
-`<where-you-downloaded-this-project>\keyboards\glorious\gmmk3\keymaps\vial`
+`<where-you-downloaded-this-project>\keyboards\gmmk\gmmk3\p65\ansi\keymaps\vial`
 
 Example if you extracted to Downloads:
 
-`C:\Users\<you>\Downloads\gmmk3\keyboards\glorious\gmmk3\keymaps\vial`
+`C:\Users\<you>\Downloads\gmmk3\keyboards\gmmk\gmmk3\p65\ansi\keymaps\vial`
 
 ## 4) Compile firmware
 
 From QMK MSYS:
 
 ```bash
-qmk compile -kb glorious/gmmk3 -km vial
+qmk compile -kb gmmk/gmmk3/p65/ansi -km vial
 ```
 
 If compile succeeds, QMK prints the output firmware filename and path (for example `.bin` or `.uf2`, depending on the keyboard bootloader target).
@@ -258,3 +258,27 @@ Because GMMK 3 revisions can differ, verify:
 - **Knob support** via `ENCODER_MAP_ENABLE` with per-layer actions.
 - **Lighting layer** with RGB Matrix + RGB Light controls.
 - **Accent light controls** via custom keys (`AC_TOG`, `AC_HUI`, `AC_HUD`, `AC_VAI`, `AC_VAD`).
+
+
+## Troubleshooting: `invalid keyboard_folder_or_all value`
+
+If you get:
+
+`qmk.exe compile: error: argument -kb/--keyboard: invalid keyboard_folder_or_all value`
+
+it means your current QMK checkout does not have that keyboard path.
+
+Run this in QMK MSYS to discover the exact available GMMK paths:
+
+```bash
+qmk list-keyboards | findstr /I gmmk3
+```
+
+Then compile with one of the listed values (example for 65% ANSI):
+
+```bash
+qmk compile -kb gmmk/gmmk3/p65/ansi -km vial
+```
+
+If `gmmk/gmmk3/...` does not appear at all, you are likely using a QMK checkout/fork that does not include GMMK 3 definitions yet.
+
