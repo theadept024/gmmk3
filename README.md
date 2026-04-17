@@ -299,3 +299,14 @@ If your QMK tree does not already include GMMK 3 P65 ANSI keyboard definitions, 
 
 These are scaffolding templates and may still require board-specific pin/MCU values from your actual hardware or vendor fork before successful compile/flash.
 
+
+
+### Notes on recent QMK warnings/errors
+
+This scaffold was updated to avoid common modern QMK metadata issues:
+
+- Removed `DEFAULT_FOLDER` from `ansi/rules.mk` (deprecated/invalid).
+- Moved USB identity metadata to `info.json` (`usb.vid`, `usb.pid`, `usb.device_version`).
+- Kept matrix/diode metadata in `info.json` to avoid duplicate overrides from `config.h`.
+- Changed lighting metadata to object sections (`rgb_matrix`, `rgblight`) to avoid `KeyError: 'rgb_matrix'` in newer QMK parsers.
+
