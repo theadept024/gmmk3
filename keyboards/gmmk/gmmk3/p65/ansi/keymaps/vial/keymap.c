@@ -1,5 +1,27 @@
 #include QMK_KEYBOARD_H
 
+
+#if !defined(RGBLIGHT_ENABLE)
+#    define RGB_TOG XXXXXXX
+#    define RGB_MOD XXXXXXX
+#    define RGB_HUI XXXXXXX
+#    define RGB_SAI XXXXXXX
+#    define RGB_VAI XXXXXXX
+#    define RGB_HUD XXXXXXX
+#    define RGB_VAD XXXXXXX
+#endif
+
+#if !defined(RGB_MATRIX_ENABLE)
+#    define RM_TOGG XXXXXXX
+#    define RM_NEXT XXXXXXX
+#    define RM_PREV XXXXXXX
+#    define RM_HUEU XXXXXXX
+#    define RM_HUED XXXXXXX
+#    define RM_SATU XXXXXXX
+#    define RM_VALU XXXXXXX
+#    define RM_VALD XXXXXXX
+#endif
+
 enum layers {
     _BASE,
     _FN,
