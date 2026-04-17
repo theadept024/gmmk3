@@ -282,3 +282,20 @@ qmk compile -kb gmmk/gmmk3/p65/ansi -km vial
 
 If `gmmk/gmmk3/...` does not appear at all, you are likely using a QMK checkout/fork that does not include GMMK 3 definitions yet.
 
+
+
+## Added keyboard-definition scaffold files (for missing-file errors)
+
+If your QMK tree does not already include GMMK 3 P65 ANSI keyboard definitions, this repo now includes template files you can adapt:
+
+- `keyboards/gmmk/gmmk3/p65/config.h`
+- `keyboards/gmmk/gmmk3/p65/halconf.h`
+- `keyboards/gmmk/gmmk3/p65/mcuconf.h`
+- `keyboards/gmmk/gmmk3/p65/info.json`
+- `keyboards/gmmk/gmmk3/p65/ansi/keyboard.json`
+- `keyboards/gmmk/gmmk3/p65/ansi/ansi.c`
+- `keyboards/gmmk/gmmk3/p65/ansi/readme.md`
+- `keyboards/gmmk/gmmk3/p65/ansi/keymaps/default/keymap.c`
+
+These are scaffolding templates and may still require board-specific pin/MCU values from your actual hardware or vendor fork before successful compile/flash.
+
